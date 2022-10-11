@@ -1,10 +1,4 @@
 <?php
-    if(isset($_POST["placeName"]) && $_POST["placeName"]!="") $places = $_POST;
-    else $places=[];
-    // $places = isset($_POST["placeName"])&&$_POST["placeName"] ? $_POST:[];
-    echo $_POST["placeName"];
-    print_r($places);
-
     function createFile($file_path) {
         $file = fopen($file_path, "w");
         fclose($file);

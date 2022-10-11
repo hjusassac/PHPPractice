@@ -8,13 +8,13 @@ function submission() {
 
     const xhr = new XMLHttpRequest();
     const method = "POST";
-    const url = "/project6/places.php"
+    const url = "places.php"
 
     xhr.open(method, url);
     xhr.send(data);
 
     if(data.get("placeName")==""){
-        console.log("empty form!")
+        // what should be done to alert there's no input where required
     } else {
         xhr.addEventListener('readystatechange', function() {
             console.log("I'm working?");

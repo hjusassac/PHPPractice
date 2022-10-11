@@ -1,10 +1,3 @@
-<?php
-    include "_paths.php";
-    include "_functions.php";
-    if($places!="") appendContent($places, $file_path);
-    $saved = readFileContents($file_path);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,7 +52,6 @@
     <div class="container">
         <h1>Your Fav Place for Later~</h1>
         <hr>
-        <!-- <form id="favPlace" action="./places.php" method="POST"> -->
         <form id="favPlace">
             <div>
                 <label for="placeName">Name of the Place</label><br>
