@@ -1,0 +1,45 @@
+[
+    {
+        "placeName": "hello",
+        "mapProvider": "naver",
+        "mapLink": "http:\/\/123.net",
+        "memo": "What's so special with this place?",
+        "rating": "5"
+    },
+    {
+        "placeName": "12",
+        "mapProvider": "naver",
+        "mapLink": "33",
+        "memo": "What's so special with this place?",
+        "rating": "3"
+    },
+    {
+        "placeName": "3434",
+        "mapProvider": "naver",
+        "mapLink": "http:\/\/456.net",
+        "memo": "What's so special with this place?",
+        "rating": "5"
+    },
+    {
+        "placeName": "ff",
+        "mapProvider": "naver",
+        "mapLink": "fff",
+        "memo": "What's so special with this place?",
+        "rating": "5"
+    },
+    {
+        "placeName": "789",
+        "mapProvider": "naver",
+        "mapLink": "http:\/\/333.net",
+        "memo": "What's so special with this place?",
+        "rating": "3"
+    },
+    {
+        "placeName": "123",
+        "mapProvider": "naver",
+        "mapLink": "http:\/\/456.net",
+        "memo": "What's so special with this place?",
+        "rating": "5"
+    },
+    []
+]
