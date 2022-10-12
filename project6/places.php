@@ -2,7 +2,10 @@
     include "_paths.php";
     include "_variables.php";
     include "_functions.php";
-    if($places!=[]) appendContent($places, $file_path);
+    if($places!=[]) {
+        array_splice($places, 1, 1);
+        appendContent($places, $file_path);
+    }
     $saved = readFileContents($file_path);
 ?>
 

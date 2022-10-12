@@ -1,29 +1,55 @@
 const submit = document.getElementById("submit");
-const placesList = document.getElementById("places");
-let respContent;
+const placeList = document.getElementById("places");
+const nameInput = document.getElementById("placeName");
+const memoInput = document.getElementById("memo");
+
+const dataNames = ["placeName", "mapProvider", "mapLink", "memo", "rating"];
+let placesLog, dataInput;
+
+function highlight(elem) {
+    elem.focus();
+    elem.style.backgroundColor = "pink";
+    elem.nextElementSibling.style.display = "inline-block";
+}
+function dehighlight(elem) {
+    elem.style.backgroundColor = "";
+    elem.nextElementSibling.style.display = "none"
+}
 
 function submission() {
-    let formPlace = document.getElementById("favPlace");
-    let data = new FormData(formPlace);
+    const formPlace = document.getElementById("favPlace");
+    const data = new FormData(formPlace);
+    dataInput = [];
+    for(let i of dataNames) dataInput.push(data.get(i));
+
+    if(dataInput[2] == "") {
+        data.set(dataNames[1], "N/A");
+        data.set(dataNames[2], "N/A");
+    } else data.set(dataNames[2], `<a href="${dataInput[2]}"> Visit ${dataInput[1]} >> </a>`);
 
     const xhr = new XMLHttpRequest();
     const method = "POST";
     const url = "places.php"
 
-    xhr.open(method, url);
-    xhr.send(data);
-
-    if(data.get("placeName")==""){
+    
+    if(dataInput[0]=="" || dataInput[3] == "What's so special with this place?" || dataInput[3] == "") { 
         // what should be done to alert there's no input where required
+        dataInput[0]=="" ? highlight(nameInput):highlight(memoInput);
     } else {
+        if(dataInput[4] == undefined) data.set(dataNames[4], "Not Sure");
+        dehighlight(nameInput);
+        dehighlight(memoInput);
+
+        xhr.open(method, url);
+        xhr.send(data);
+    
         xhr.addEventListener('readystatechange', function() {
             console.log("I'm working?");
             if(this.readyState == 4) {
-                respContent = xhr.responseText;
-                // var response = JSON.parse(xhr.responseText);
-                // console.log(response);
-                placesList.innerHTML = "<h2>Places List</h2><hr>"+respContent;
-                placesList.classList.add("container");
+                // when successfully sent request, grab the stored data and show in html
+                placesLog = xhr.responseText;
+                placeList.innerHTML = "<h2>Places List</h2><hr>"+placesLog;
+                placeList.classList.add("container");
             }
         })
     }

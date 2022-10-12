@@ -46,6 +46,10 @@
         table {
             border-spacing: 20px 5px;
         }
+        span {
+            color: rgb(255, 86, 114);
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -56,19 +60,21 @@
             <div>
                 <label for="placeName">Name of the Place</label><br>
                 <input type="text" name="placeName" id="placeName" placeholder="Name it!" autofocus required>
+                <span>: Required</span>
             </div>
             <div>
                 <label for="mapLink">Link to Map</label><br>
                 <select name="mapProvider" id="mapProvider">
-                    <option value="google">Google Maps</option>
-                    <option value="naver" selected>Naver Map</option>
-                    <option value="kakao">Kakao Map</option>
+                    <option value="Google Maps">Google Maps</option>
+                    <option value="Naver Map" selected>Naver Map</option>
+                    <option value="Kakao Map">Kakao Map</option>
                 </select>
                 <input type="url" name="mapLink" id="mapLink" placeholder="Paste the link here!"><br>
             </div>
             <div>
                 <label for="memo">Memo</label><br>
                 <textarea name="memo" id="memo" cols="30" rows="5">What's so special with this place?</textarea>
+                <span>: Required</span>
             </div>
             <div>
                 <label for="scoreThree">Give a score out of 5</label><br>
