@@ -3,13 +3,13 @@
     include "_variables.php";
     include "_functions.php";
     if($places!=[]) {
+        // when there's form input, process the input and store in the file
         array_splice($places, 1, 1);
         appendContent($places, $file_path);
     }
+    // and then read the file contents to display below
     $saved = readFileContents($file_path);
 ?>
-
-<?php if($places!=[]): ?>
 <table>
     <thead>
         <tr>
@@ -30,4 +30,27 @@
         <?php endfor; ?>
     </tbody>
 </table>
-<?php endif; ?>
+
+<?php
+echo "<hr>";
+
+$anarray = [
+    "placeName"=>"hehehe789",
+    "mapProvider"=>"Google Maps",
+    "mapLink"=>"http:\/\/456.net",
+    "memo"=>"yellow",
+    "rating"=>"3"
+];
+
+$array2 = [['a'=>"🍎", 'b'=>"🍑", 'c'=>"🥭", 'd'=>"🥥"], ['a'=>"🍎", 'b'=>"🥭", 'c'=>"🥥"], ['a'=>"🥪", 'b'=>"🥨", 'c'=>"🧇"]];
+$index = 0;
+foreach($array2 as $item) {
+    if($item['a'] == "🥪") break;
+    // $index5 = array_search("🍎", $item);
+    // if($index5) break;
+    $index ++;
+}
+echo $index;
+echo "<hr>";
+echo uniqid();
+// editContent($file_path, $anarray);

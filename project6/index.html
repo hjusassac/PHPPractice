@@ -36,7 +36,7 @@
             background-color:transparent;
             font-weight:bold;
         }
-        #submit {
+        #submit, #done {
             background-color: darkslategrey;
             color: white;
         }
@@ -49,6 +49,22 @@
         span {
             color: rgb(255, 86, 114);
             display: none;
+        }
+        /* #places {
+            display: none;
+        } */
+        #edit, #done {
+            width: fit-content;
+            float: right;
+            padding: 5px 15px;
+            margin-top: 1em;
+        }
+        #done {
+            display: none;
+        }
+        .editEntry, .deleteEntry {
+            width: fit-content;
+            padding: 5px 0;
         }
     </style>
 </head>
@@ -65,8 +81,9 @@
             <div>
                 <label for="mapLink">Link to Map</label><br>
                 <select name="mapProvider" id="mapProvider">
+                    <option value="none">--- Select ---</option>
                     <option value="Google Maps">Google Maps</option>
-                    <option value="Naver Map" selected>Naver Map</option>
+                    <option value="Naver Map">Naver Map</option>
                     <option value="Kakao Map">Kakao Map</option>
                 </select>
                 <input type="url" name="mapLink" id="mapLink" placeholder="Paste the link here!"><br>
@@ -89,7 +106,38 @@
             <button type="reset">Reset</button>
         </form>
     </div>
-    <div id="places"></div>
-    <script src="app.js"></script>
+    <div class="container" id="places" >
+        <button type="button" id="edit">Edit</button>
+        <button type="button" id="done">Done</button>
+        <h2>Places List</h2>
+        <hr>
+        <div>
+            <table id="List">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Link</th>
+                        <th>Memo</th>
+                        <th>Rating</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+                <tbody style="display:none;">
+                    <tr class="tableRow">
+                        <td class="name"></td>
+                        <td class="link"></td>
+                        <td class="memo"></td>
+                        <td class="rating"></td>
+                        <td class="buttons">
+                            <button type="button" class="editEntry">Edit</button>
+                            <button type="button" class="deleteEntry">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- <script src="app.js"></script> -->
+    <script src="app1.js"></script>
 </body>
 </html>

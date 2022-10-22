@@ -1,14 +1,23 @@
 [
     {
-        "placeName": "dd",
-        "mapLink": "N\/A",
-        "memo": "ff",
-        "rating": "Not Sure"
+        "placeName": "Problems",
+        "mapProvider": "N\/A",
+        "mapLink": "http:\/\/123.net",
+        "memo": "1. Should use ID to edit placesName\r\n2. to use ID,.... schema is messed up...\r\n   - probably should create another button to confirm Edit\r\n   - create another function dedicated to Edit to have ID=event.target.value on the top",
+        "rating": "3"
     },
     {
-        "placeName": "123",
-        "mapLink": "<a href=\"http:\/\/123.net\"> Visit Naver Map >> <\/a>",
-        "memo": "ff",
+        "placeName": "Better Option?",
+        "mapProvider": "N\/A",
+        "mapLink": "N\/A",
+        "memo": "Just Delete IDs and add new item when Name gets different and Delete old one by manually",
+        "rating": "4"
+    },
+    {
+        "placeName": "hello",
+        "mapProvider": "Google Maps",
+        "mapLink": "http:\/\/123.net",
+        "memo": "Got back!!",
         "rating": "4"
     }
 ]
