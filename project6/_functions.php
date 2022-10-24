@@ -24,6 +24,7 @@
     
     function appendContent($places, $file_path) { // grab an array input
         $content = filesize($file_path)>0 ? readFileContents($file_path):[];
+        $places["id"] = uniqid();
         array_push($content, $places);
         overWriteContent($file_path, $content);
     }
@@ -31,17 +32,17 @@
     function findAndExclude($item, $arrayAssociatives){
         // check if the values of the associative arrays in an array match with an input and if so, return an array excluding the associative array
         $selected = array_filter($arrayAssociatives, function ($value) use ($item){
-            return $value["placeName"] != $item;
+            return $value["id"] != $item;
         });
         return array_values($selected); //return only the value of the array, not the key that was automatically created by array_filter()
     }
 
-    function deleteItem($file_path, $selected) {
+    function deleteItem($file_path, $selected_id) {
         // 1. read file and return an array = [[key1 => value, key2 => value, ...], [key1 => value, key2 => value, ...], ...]
         $array = readFileContents($file_path);
 
         // 2. find the matching item(associative array object) and return an array excluding the item
-        $array = findAndExclude($selected, $array);
+        $array = findAndExclude($selected_id, $array);
 
         // 3. rewrite the file with the result
         overWriteContent($file_path, $array);
