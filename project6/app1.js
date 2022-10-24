@@ -10,7 +10,7 @@ const table = document.getElementById("List");
 const dataList = document.querySelector("#tableBody");
 
 
-const dataNames = ["placeName", "mapProvider", "mapLink", "memo", "rating"];
+const dataNames = ["placeName", "mapProvider", "mapLink", "memo", "rating", "id"];
 let placesLog, sendEdit=false;
 
 function highlight(elem) {
@@ -35,6 +35,7 @@ function showPlacesListNew(array) {
     for(let item of array) {
         // clone node for place list display
         let tableModel = table.lastElementChild.querySelector(".tableRow").cloneNode(true);
+        tableModel.setAttribute("data-id", item[dataNames[5]]);
         tableModel.querySelector(".name").innerHTML = item[dataNames[0]];
         if(item[dataNames[1]]=="N/A" && item[dataNames[2]]=="N/A") {
             tableModel.querySelector(".link").innerHTML = item[dataNames[2]];
@@ -47,7 +48,6 @@ function showPlacesListNew(array) {
         // hide buttons by default to only show when Edit is clicked
         if(hideEditButtons) tableModel.querySelector(".buttons").style.display="none";
         tableModel.querySelector(".editEntry").setAttribute("value", `${item["placeName"]}`);
-        tableModel.querySelector(".deleteEntry").setAttribute("value", `${item["placeName"]}`);
 
         // append the row
         dataList.appendChild(tableModel);
@@ -143,7 +143,7 @@ function showOrHide(bull) { // show or hide the edit/delete buttons
 function createFormData(type, value) { // type: edit or delete, value: unique entry
     let sendingData = new FormData();
     sendingData.set(type, true);        
-    sendingData.set("placeName", value);
+    sendingData.set("placeId", value);
     return sendingData;
 }
 
@@ -151,8 +151,10 @@ function deleteEvent() {
     let deleteButtons = dataList.querySelectorAll(".deleteEntry");
     for(let deleteButton of deleteButtons) {
         deleteButton.addEventListener("click", function(event){
-            console.log("I clicked to delete "+event.target.value);
-            let dataED = createFormData("delete", event.target.value);
+            let id = event.currentTarget.closest('.tableRow').getAttribute('data-id');
+
+            // console.log("I clicked to delete "+event.target.value);
+            let dataED = createFormData("delete", id);
             // console.log("edit:"+dataEdit.get("edit")+"-"+dataEdit.get("placeName"));
             sendxhr("POST", filePath, dataED);
         })

@@ -8,7 +8,7 @@
     include "_functions.php";
 
     if(isset($_POST["delete"]) && $_POST["delete"]) {
-        deleteItem($file_path, $_POST["placeName"]);
+        deleteItem($file_path, $_POST["placeId"]);
         // echo "deleted";
     }else if(isset($_POST["edit"]) && $_POST["edit"]) {
         editItem($file_path, $_POST);
