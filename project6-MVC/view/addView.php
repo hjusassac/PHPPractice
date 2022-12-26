@@ -15,7 +15,7 @@
         <div>
             <label for="mapLink">Link to Map</label><br>
             <select name="mapProvider" id="mapProvider">
-                <option value="none">--- Select ---</option>
+                <option value="">--- Select ---</option>
                 <option value="Google Maps">Google Maps</option>
                 <option value="Naver Map">Naver Map</option>
                 <option value="Kakao Map">Kakao Map</option>

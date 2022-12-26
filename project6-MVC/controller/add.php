@@ -9,8 +9,8 @@ if(isset($_POST['add'])
     && isset($_POST['memo']) && $_POST['memo'] != ''
 ) {
     $name = $_POST['placeName'];
-    $map_provider = isset($_POST['map_provider']) ? $_POST['map_provider']:null;
-    $map_link = isset($_POST['map_link']) ? $_POST['map_link']:null;
+    $map_provider = (isset($_POST['mapProvider']) && $_POST['mapProvider'] != '') ? $_POST['mapProvider']:null;
+    $map_link = (isset($_POST['mapLink']) && $_POST['mapLink'] !='') ? $_POST['mapLink']:null;
     $memo = $_POST['memo'];
     $rating = isset($_POST['rating']) ? $_POST['rating']:null;
 

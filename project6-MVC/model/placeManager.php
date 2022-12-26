@@ -21,5 +21,8 @@ class PlaceManager extends Manager {
         header('Location: ' . Manager::$indexPath);
     }
 
-    
+    public static function giveLink($map_provider, $map_link) {
+        $map_provider = $map_provider == null ? $map_link:$map_provider;
+        return '<a href="' . $map_link . '">' . $map_provider . '</a>';
+    }
 }

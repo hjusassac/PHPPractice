@@ -24,7 +24,7 @@
         <tr class="tableRow">
             <td class="name"><?= $place['name'] ?></td>
             <td class="link">
-                <?= $place['map_link'] == null ? 'N/A':$place['map_link'] ?>
+                <?= $place['map_link'] == null ? 'N/A': PlaceManager::giveLink($place['map_provider'], $place['map_link']) ?>
             </td>
             <td class="memo"><?= $place['memo'] ?></td>
             <td class="rating"><?= $place['rating'] == null ? 'Not Sure': Manager::giveStars($place['rating']) ?></td>
