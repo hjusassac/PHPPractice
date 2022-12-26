@@ -19,5 +19,12 @@
         "mapLink": "http:\/\/123.net",
         "memo": "Got back!!",
         "rating": "5"
+    },
+    {
+        "placeName": "heheh",
+        "mapProvider": "N\/A",
+        "mapLink": "N\/A",
+        "memo": "What's so special with this place?123",
+        "rating": "Not Sure"
     }
 ]

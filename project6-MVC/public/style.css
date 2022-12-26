@@ -1,0 +1,91 @@
+body{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+}
+
+#header {
+    background-color: antiquewhite;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#header ul {
+    display:flex;
+    justify-content:center;
+    list-style-type: none;
+}
+#header a {
+    text-decoration: none;
+    color: darkslategrey;
+    font-weight: bold;
+    font-size: 1.7em;
+    margin-right: 10px;
+}
+#header a:hover {
+    text-decoration: underline;
+}
+
+#hiUser {
+    display: inline;
+    margin-right: 10px;
+}
+
+.container {
+    background-color: antiquewhite;
+    padding: 15px;
+    width: fit-content;
+    margin: 10px auto;
+}
+h1 {
+    width: fit-content;
+}
+h1, h2 {
+    color: darkslategrey
+}
+form {
+    /* width: fit-content; */
+    font-size: 18px;
+}
+input, button, select {
+    font-size: 16px;
+}
+button {
+    width: 49%;
+    padding: 10px 0;
+    background-color:transparent;
+    font-weight:bold;
+}
+#submit, #done {
+    background-color: darkslategrey;
+    color: white;
+}
+form div {
+    margin: 15px auto;
+}
+table {
+    border-spacing: 20px 5px;
+}
+span {
+    color: rgb(255, 86, 114);
+    display: none;
+}
+.buttons {
+    display: none;
+}
+#edit, #done {
+    width: fit-content;
+    float: right;
+    padding: 5px 15px;
+    margin-top: 1em;
+}
+#done {
+    display: none;
+}
+.editEntry, .deleteEntry {
+    width: fit-content;
+    padding: 5px 0;
+}
+.memo, .link {
+    max-width: 300px;
+}
