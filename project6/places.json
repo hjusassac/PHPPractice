@@ -14,10 +14,10 @@
         "rating": "4"
     },
     {
-        "placeName": "hello",
-        "mapProvider": "Google Maps",
+        "placeName": "hello123",
+        "mapProvider": "Naver Map",
         "mapLink": "http:\/\/123.net",
         "memo": "Got back!!",
-        "rating": "4"
+        "rating": "5"
     }
 ]

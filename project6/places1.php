@@ -1,10 +1,8 @@
 <?php
     include "_paths.php";
-
-    // include "_variables.php";
-    if(isset($_POST["placeName"]) && $_POST["placeName"]!="") $places = $_POST;
-    else $places=[];
-
+    include "_variables.php";
+    // if(isset($_POST["placeName"]) && $_POST["placeName"]!="") $places = $_POST;
+    // else $places=[];
     include "_functions.php";
 
     if(isset($_POST["delete"]) && $_POST["delete"]) {
