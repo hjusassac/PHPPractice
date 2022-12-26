@@ -73,6 +73,9 @@ span {
 .buttons {
     display: none;
 }
+.buttons button {
+    margin-right: 5px;
+}
 #edit, #done {
     width: fit-content;
     float: right;
