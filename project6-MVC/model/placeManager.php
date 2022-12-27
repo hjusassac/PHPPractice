@@ -10,6 +10,14 @@ class PlaceManager extends Manager {
         return $places;
     }
 
+    public function getPlace($place_id) {
+        $db = Manager::connectDB();
+        $places = $db->prepare('SELECT * FROM places WHERE id = ?');
+        $places->execute([$place_id]);
+        $place = $places->fetch();
+        return $place;
+    }
+
     public function addPlaces($name, $map_provider, $map_link, $memo, $rating)
     {
         $db = Manager::connectDB();
@@ -26,4 +34,27 @@ class PlaceManager extends Manager {
         $this->delete('places', $place_id);
     }
 
+    public function editPlace($place_id, $formData)
+    {
+        $db = Manager::connectDB();
+        $edit_places = $db->prepare(
+            "UPDATE places SET " . "
+            name = ?,
+            map_provider = ?,
+            map_link = ?,
+            memo = ?,
+            rating = ?
+            " . "WHERE id = ?"
+        );
+        $edit_places->execute([
+            $formData['name'],
+            $formData['map_provider'],
+            $formData['map_link'],
+            $formData['memo'],
+            $formData['rating'],
+            $place_id
+        ]);
+
+
+    }
 }

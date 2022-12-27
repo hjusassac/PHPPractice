@@ -31,7 +31,9 @@
                     <td class="memo"><?= $place['memo'] ?></td>
                     <td class="rating"><?= $place['rating'] == null ? 'Not Sure': giveStars($place['rating']) ?></td>
                     <td class="buttons">
-                        <button type="submit" class="editEntry" name="edit" value="<?= $place['id'] ?>">Edit</button>
+                        <button type="button" class="editEntry" onclick="
+                            window.location.href='<?= $editPath ?>&id=<?= $place['id'] ?>';
+                        ">Edit</button>
                         <button type="submit" class="deleteEntry" name="delete" value="<?= $place['id'] ?>">Delete</button>
                     </td>
                 </tr>

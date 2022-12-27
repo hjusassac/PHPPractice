@@ -1,6 +1,5 @@
 <?php
-$indexPath = 'index.php?action=list';
-
+include_once '_paths.php';
 include_once 'model/placeManager.php';
 
 $place_manager = new PlaceManager();

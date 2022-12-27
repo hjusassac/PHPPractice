@@ -36,7 +36,7 @@
             <input type="radio" name="rating" id="scoreFive" value="5">5
         </div>
         <hr>
-        <button type="submit" name="add">Submit</button>
+        <button type="submit" id="submit" name="add">Submit</button>
         <button type="reset">Reset</button>
     </form>
 </div>
