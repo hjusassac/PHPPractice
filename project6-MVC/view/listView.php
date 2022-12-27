@@ -1,5 +1,6 @@
 <?php
     $title = 'Fav Places List';
+    include 'viewHelper.php';
     ob_start();
 ?>
 
@@ -24,10 +25,10 @@
         <tr class="tableRow">
             <td class="name"><?= $place['name'] ?></td>
             <td class="link">
-                <?= $place['map_link'] == null ? 'N/A': PlaceManager::giveLink($place['map_provider'], $place['map_link']) ?>
+                <?= $place['map_link'] == null ? 'N/A': giveLink($place['map_provider'], $place['map_link']) ?>
             </td>
             <td class="memo"><?= $place['memo'] ?></td>
-            <td class="rating"><?= $place['rating'] == null ? 'Not Sure': Manager::giveStars($place['rating']) ?></td>
+            <td class="rating"><?= $place['rating'] == null ? 'Not Sure': giveStars($place['rating']) ?></td>
             <td class="buttons">
                 <button type="button" class="editEntry">Edit</button>
                 <button type="button" class="deleteEntry">Delete</button>

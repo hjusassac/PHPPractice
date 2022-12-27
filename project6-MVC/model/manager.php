@@ -1,16 +1,10 @@
 <?php
 
 class Manager {
-    protected static $indexPath = 'http://localhost/git/PHPPractice/project6-MVC/index.php?action=list';
+    public static $indexPath = 'index.php?action=list'; // go relative
 
     protected static function connectDB() {
         return new PDO('mysql:host=localhost;dbname=fav_places;charset=utf8', 'root', '');
-    }
-
-    public static function giveStars($num) {
-        $num = (int) $num;
-        $stars = ["★", "★★", "★★★", "★★★★", "★★★★★"];
-        return $stars[$num-1];
     }
 
     protected function delete($table_name, $id, $field_name = 'id') {
@@ -21,7 +15,7 @@ class Manager {
         );
         $delete->execute([$id]);
 
-        header("Refresh:0");
+        // header("Refresh:0");
     }
     
 }
