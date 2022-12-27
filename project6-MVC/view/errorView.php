@@ -7,7 +7,7 @@
     <h2>ERROR</h2>
     <hr>
     <p><?= $errorMessage ?></p>
-    <p>Please <a href="index.php">GO BACK TO MAIN ></a></p>
+    <p>Please <a href="index.php?action=list">GO BACK TO MAIN ></a></p>
 </div>
 
 <?php
