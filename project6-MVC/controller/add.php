@@ -1,4 +1,5 @@
 <?php
+$indexPath = 'index.php?action=list';
 
 include_once 'model/placeManager.php';
 
@@ -16,5 +17,5 @@ if(isset($_POST['add'])
 
     // $timestamp = date("Y-m-d H:i:s");
     $place_manager->addPlaces($name, $map_provider, $map_link, $memo, $rating);
-    header('Location: ' . Manager::$indexPath);
+    header('Location: ' . $indexPath);
 }

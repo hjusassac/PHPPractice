@@ -1,7 +1,7 @@
 <?php
 
 class Manager {
-    public static $indexPath = 'index.php?action=list'; // go relative
+    // public static $indexPath = 'index.php?action=list'; // go relative
 
     protected static function connectDB() {
         return new PDO('mysql:host=localhost;dbname=fav_places;charset=utf8', 'root', '');

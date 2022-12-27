@@ -21,4 +21,9 @@ class PlaceManager extends Manager {
         // header('Location: ' . Manager::$indexPath);
     }
 
+    public function deletePlaces($place_id)
+    {
+        $this->delete('places', $place_id);
+    }
+
 }
