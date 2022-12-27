@@ -26,6 +26,10 @@ body{
     text-decoration: underline;
 }
 
+#header form {
+    margin:0;
+}
+
 #hiUser {
     display: inline;
     margin-right: 10px;

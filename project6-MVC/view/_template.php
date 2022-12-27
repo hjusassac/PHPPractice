@@ -10,6 +10,5 @@
 <body>
     <?php include '_header.php' ?>
     <?= $html ?>
-    <script src="public/app.js"></script>
 </body>
 </html>

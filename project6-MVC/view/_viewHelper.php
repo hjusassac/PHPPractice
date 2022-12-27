@@ -2,7 +2,7 @@
 
 function giveLink($map_provider, $map_link) {
     $map_provider = $map_provider == null ? $map_link:$map_provider;
-    return '<a href="' . $map_link . '">' . $map_provider . '</a>';
+    return '<a href="' . $map_link . '" target="_blank">' . $map_provider . '</a>';
 }
 
 function giveStars($num) {

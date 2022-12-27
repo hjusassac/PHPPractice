@@ -44,6 +44,7 @@
         </tbody>
     </table>
 </div>
+<script src="public/app_edit-toggle.js"></script>
 
 
 

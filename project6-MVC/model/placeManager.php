@@ -18,15 +18,20 @@ class PlaceManager extends Manager {
         return $place;
     }
 
-    public function addPlaces($name, $map_provider, $map_link, $memo, $rating)
+    public function addPlaces($formData)
     {
         $db = Manager::connectDB();
         $add_places = $db->prepare('
             INSERT INTO places (name, map_provider, map_link, memo, rating)
             VALUE (?, ?, ?, ?, ?)
         ');
-        $add_places->execute([$name, $map_provider, $map_link, $memo, $rating]);
-        // header('Location: ' . Manager::$indexPath);
+        $add_places->execute([
+            $formData['name'],
+            $formData['map_provider'],
+            $formData['map_link'],
+            $formData['memo'],
+            $formData['rating'],
+        ]);
     }
 
     public function deletePlaces($place_id)
@@ -54,7 +59,5 @@ class PlaceManager extends Manager {
             $formData['rating'],
             $place_id
         ]);
-
-
     }
 }
