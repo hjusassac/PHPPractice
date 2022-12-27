@@ -5,8 +5,8 @@
 
 <div id="header">
     <ul>
-        <li><a href="index.php?action=list" style="<?= $action == 'list' ? $highlight:'' ?>">LIST</a></li>
-        <li><a href="index.php?action=add" style="<?= $action == 'add' ? $highlight:'' ?>">ADD</a></li>
+        <li><a href="<?= $indexPath ?>" style="<?= $action == 'list' ? $highlight:'' ?>">LIST</a></li>
+        <li><a href="<?= $addPath ?>" style="<?= $action == 'add' ? $highlight:'' ?>">ADD</a></li>
     </ul>
     <form method="post">
         <p id="hiUser"><?= 'hello ' . $user_name . '!' ?></p>
