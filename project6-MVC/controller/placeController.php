@@ -12,7 +12,7 @@ function listPlaces() {
         $place_manager->deletePlaces($_POST['delete']);
         header("Refresh:0");
     }
-
+    $current_action = 'list';
     require 'view/listView.php';
 }
 
@@ -36,6 +36,7 @@ function addPlaces() {
         header('Location: ' . $indexPath);
     }
 
+    $current_action = 'add';
     require 'view/addView.php';
 }
 
@@ -67,10 +68,12 @@ function editPlaces() {
         header('Location: ' . $indexPath);
     }
 
+    $current_action = 'edit';
     require 'view/editView.php';
 }
 
 function displayError($errorMessage) {
     include 'controller/_paths.php';
+    $current_action = 'error';
     require 'view/errorView.php';
 }

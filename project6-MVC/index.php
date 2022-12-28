@@ -22,19 +22,3 @@ try{
     $EM = $e->getMessage() != '' ? $e->getMessage():'UNKNOWN ERROR';
     displayError($EM);
 }
-
-
-// $actions = [];
-// $dir = 'controller';
-// $controllers = scandir($dir);
-// foreach($controllers as $controller) {
-//     $result = explode('.', $controller);
-//     if($result[0]!='') array_push($actions, $result[0]);
-// }
-
-// if(array_search($action, $actions) !== false) {
-//     include 'controller/' . $action . '.php';
-//     require 'view/' . $action .'View.php';
-// } else {
-//     echo 'wrong url';
-// }

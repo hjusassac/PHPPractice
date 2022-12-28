@@ -1,5 +1,5 @@
 <?php
-    $title = 'Edit Fav Places';
+    $title = 'Edit';
     include '_viewHelper.php';
     $selected = giveSelected($place['map_provider']);
     $checked = giveChecked($place['rating']);
@@ -7,7 +7,7 @@
 ?>
 
 <div class="container">
-    <h1><?= $title ?></h1>
+    <h1><?= $title . ' ' . $place['name'] ?></h1>
     <hr>
     <form method="POST" id="favPlace">
         <div>
